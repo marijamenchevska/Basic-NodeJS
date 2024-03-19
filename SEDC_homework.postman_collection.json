@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "18e7a294-1ed5-432b-af3e-0b02212f766c",
+		"name": "SEDC_homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33333038"
+	},
+	"item": [
+		{
+			"name": "homework_3",
+			"item": [
+				{
+					"name": "normal_version",
+					"item": [
+						{
+							"name": "Get trainers",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get trainer by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get currently active trainers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get sorted trainers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a trainer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"fjl\",\r\n    \"firstName\": \"Aneta\",\r\n    \"lastName\": \"Stankovska\",\r\n    \"email\": \"anetastankovskaane@gmail.com\",\r\n    \"isCurrentlyTeaching\": false,\r\n    \"timeEmployed\": \"2 years 2 months\",\r\n    \"coursesFinishedCount\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a trainer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivo\",\r\n    \"lastName\": \"Kostovski2\",\r\n    \"email\": \"ivo.kostovski@gmail.com\",\r\n    \"isCurrentlyTeaching\": true,\r\n    \"timeEmployed\": \"7 years\",\r\n    \"coursesFinishedCount\": 25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Partially update a trainer",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivo3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a trainer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all trainers",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
