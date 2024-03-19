@@ -14,17 +14,53 @@
 					"item": [
 						{
 							"name": "Get trainers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/trainers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"trainers"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Get trainer by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://localhost:3000/api/trainers/:id",
 									"protocol": "http",
@@ -40,7 +76,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "abc"
+											"value": "6f053fbb-9036-4ce1-960b-3a42365e4664"
 										}
 									]
 								}
@@ -49,11 +85,23 @@
 						},
 						{
 							"name": "Get currently active trainers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://localhost:3000/api/trainers/:id",
+									"raw": "http://localhost:3000/api/trainers?currentlyActive=true",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -61,13 +109,12 @@
 									"port": "3000",
 									"path": [
 										"api",
-										"trainers",
-										":id"
+										"trainers"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "id",
-											"value": "abc"
+											"key": "currentlyActive",
+											"value": "true"
 										}
 									]
 								}
@@ -80,7 +127,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/api/trainers/:id",
+									"raw": "http://localhost:3000/api/trainers?sortBy=coursesAsc",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -88,13 +135,12 @@
 									"port": "3000",
 									"path": [
 										"api",
-										"trainers",
-										":id"
+										"trainers"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "id",
-											"value": "abc"
+											"key": "sortBy",
+											"value": "coursesAsc"
 										}
 									]
 								}
@@ -108,7 +154,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"fjl\",\r\n    \"firstName\": \"Aneta\",\r\n    \"lastName\": \"Stankovska\",\r\n    \"email\": \"anetastankovskaane@gmail.com\",\r\n    \"isCurrentlyTeaching\": false,\r\n    \"timeEmployed\": \"2 years 2 months\",\r\n    \"coursesFinishedCount\": 10\r\n}",
+									"raw": "    {\r\n        \"id\": \"hgthfgh\",\r\n        \"firstName\": \"Todor\",\r\n        \"lastName\": \"Pelivanov\",\r\n        \"email\": \"tpelivanov@gmail.com\",\r\n        \"isCurrentlyTeaching\": false,\r\n        \"timeEmployed\": \"2 years\",\r\n        \"coursesFinishedCount\": 8\r\n    }\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -254,7 +300,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/api/trainers/:id",
+									"raw": "http://localhost:3000/api/trainers/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -263,13 +309,7 @@
 									"path": [
 										"api",
 										"trainers",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "abc"
-										}
+										""
 									]
 								}
 							},
