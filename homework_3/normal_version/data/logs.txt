@@ -1,0 +1,41 @@
+
+        GET all trainers evoked.
+        Logged at: 2024-03-19T22:58:59.021Z
+        ======================================
+        
+        GET trainer by id: 6f053fbb-9036-4ce1-960b-3a42365e4664 evoked.
+        Logged at: 2024-03-19T23:00:55.703Z
+        ======================================
+        
+        GET trainers by currentlyActive: true evoked.
+        Logged at: 2024-03-19T23:04:35.378Z
+        ======================================
+        
+        GET trainers by sortBy: coursesAsc evoked.
+        Logged at: 2024-03-19T23:05:55.077Z
+        ======================================
+        
+        GET all trainers evoked.
+        Logged at: 2024-03-19T23:14:33.291Z
+        ======================================
+        
+        GET all trainers evoked.
+        Logged at: 2024-03-19T23:15:57.563Z
+        ======================================
+        
+        GET trainer by id: 6f053fbb-9036-4ce1-960b-3a42365e4664 evoked.
+        Logged at: 2024-03-19T23:16:44.736Z
+        ======================================
+        
+        GET trainers by currentlyActive: undefined evoked.
+        Logged at: 2024-03-19T23:17:39.426Z
+        ======================================
+        
+        GET trainers by currentlyActive: undefined evoked.
+        Logged at: 2024-03-19T23:17:55.155Z
+        ======================================
+        
+        GET trainers by sortBy: coursesAsc evoked.
+        Logged at: 2024-03-19T23:18:32.279Z
+        ======================================
+        
