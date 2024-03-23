@@ -9,11 +9,51 @@ const trainersPath = path.join(import.meta.dirname, '..', 'data', 'trainers.json
 const router = Router();
 
 router.get('', (req, res) => {
-    logger.emit("log", "GET all trainers evoked.");
+    if(req.query.currentlyActive) {
+        const currentlyTeaching = req.query.currentlyActive;
 
-    const trainers = readData(trainersPath);
+        logger.emit("log", `GET trainers by currentlyActive: ${currentlyTeaching} evoked.`);
 
-    res.send(trainers);
+        const trainers = readData(trainersPath);
+
+        const filteredTrainers = trainers.filter(trainer => trainer.isCurrentlyTeaching.toString() === currentlyTeaching);
+        
+        if(currentlyTeaching !== 'true' && currentlyTeaching !== 'false') {
+            res.send("Invalid query parameter.");
+        }
+        else if(filteredTrainers.length === 0) {
+            res.send("No such trainers were found.");
+        }
+
+        res.send(filteredTrainers);
+    }
+    else if(req.query.sortBy) {
+        const sortingOrder = req.query.sortBy;
+
+        logger.emit("log", `GET trainers by sortBy: ${sortingOrder} evoked.`);
+
+        const trainers = readData(trainersPath);
+
+        if(sortingOrder === "coursesAsc") {
+            trainers.sort((a, b) => a.coursesFinishedCount - b.coursesFinishedCount);
+            res.send(trainers);
+        }
+        else if (sortingOrder === "coursesDesc") {
+            trainers.sort((a, b) => b.coursesFinishedCount - a.coursesFinishedCount);
+            res.send(trainers);
+        }
+
+        res.send("Invalid query parameter.");
+    }
+    else {
+        logger.emit("log", "GET all trainers evoked.");
+
+        const trainers = readData(trainersPath);
+        const currentlyTeaching = req.query.currentlyActive;
+        console.log(currentlyTeaching);
+
+        res.send(trainers);
+    }
 });
 
 router.get('/:id', (req, res) => {
@@ -31,43 +71,6 @@ router.get('/:id', (req, res) => {
 
     res.send(trainer);
 });
-
-// Valid for both true and false
-// router.get('', (req, res) => {
-//     const currentlyTeaching = req.query.currentlyActive;
-
-//     logger.emit("log", `GET trainers by currentlyActive: ${currentlyTeaching} evoked.`);
-
-//     const trainers = readData(trainersPath);
-
-//     const filteredTrainers = trainers.filter(trainer => trainer.isCurrentlyTeaching.toString() === currentlyTeaching);
-    
-//     if(filteredTrainers.length === 0) {
-//         res.send("No such trainers were found.")
-//     }
-
-//     res.send(filteredTrainers);
-// });
-
-// router.get('', (req, res) => {
-//     const sortingOrder = req.query.sortBy;
-
-//     logger.emit("log", `GET trainers by sortBy: ${sortingOrder} evoked.`);
-
-//     const trainers = readData(trainersPath);
-
-//     if(sortingOrder === "coursesAsc") {
-//         trainers.sort((a, b) => a.coursesFinishedCount - b.coursesFinishedCount);
-//         res.send(trainers);
-//     }
-//     else if (sortingOrder === "coursesDesc") {
-//         trainers.sort((a, b) => b.coursesFinishedCount - a.coursesFinishedCount);
-//         res.send(trainers);
-//     }
-//     else {
-//         res.send("Invalid query parameter.");
-//     }
-// });
 
 router.post('', (req, res) => {
     const reqTrainer = req.body;
